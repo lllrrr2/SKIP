@@ -91,3 +91,7 @@ lint/tmp/
 node_modules/
 docs/.vitepress/cache
 docs/.vitepress/dist
+!tsconfig.json
+coverage
+scripts/__tests__/examples/dist
+!scripts/__tests__/examples/dist/.gitkeep

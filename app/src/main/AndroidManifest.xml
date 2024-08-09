@@ -5,8 +5,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
+        android:name=".SKIPApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -31,6 +33,10 @@
             android:exported="false" />
         <activity
             android:name=".AboutActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".LayoutInspectActivity"
             android:exported="false" />
 
         <provider
@@ -68,6 +74,12 @@
                 android:name="android.accessibilityservice"
                 android:resource="@xml/accessibility" />
         </service>
+
+        <service
+            android:name=".service.LayoutInspectService"
+            android:enabled="true"
+            android:foregroundServiceType="mediaProjection"
+            />
     </application>
 
 </manifest>
